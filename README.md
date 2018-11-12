@@ -1,4 +1,4 @@
-This is a dockerization of the dependencies for a successful deployment of MadMiner (J. Brehmer, K. Cranmer, and F. Kling). It includes custom patches and compatible versions of:
+This is a dockerization of the dependencies for a successful deployment of MadMiner (J. Brehmer, K. Cranmer, and F. Kling). It includes custom patches (by J.Brehmer) and compatible versions of:
 
     ROOT from rootproject/root-ubuntu16
     MG5_aMC_v2_6_2
