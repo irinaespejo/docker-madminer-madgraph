@@ -25,10 +25,6 @@ RUN git clone https://github.com/irinaespejo/${MG_VERSION}.git &&\
 
 WORKDIR /home/software/${MG_VERSION}
 
-ENV ROOTSYS /usr/local 
-ENV PATH $PATH:$ROOTSYS/bin 
-ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:$ROOTSYS/lib 
-
 RUN echo "install lhapdf6" | /home/software/${MG_VERSION}/bin/mg5_aMC
 RUN echo "install pythia8" | /home/software/${MG_VERSION}/bin/mg5_aMC
 RUN echo "install pythia-pgs" | /home/software/${MG_VERSION}/bin/mg5_aMC
