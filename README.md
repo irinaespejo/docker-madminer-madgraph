@@ -8,4 +8,4 @@ This is a dockerization of the dependencies for a successful deployment of MadMi
 
 You can pull the latest image from https://hub.docker.com/r/irinahub/docker-madminer-madgraph/
 
-There might be bugs, wrapping up MadMiner is a work in process.
+There might be bugs, wrapping up MadMiner is a work in progress.
