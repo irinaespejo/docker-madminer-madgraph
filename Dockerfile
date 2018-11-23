@@ -7,7 +7,6 @@ FROM rootproject/root-ubuntu16
 USER root 
 
 RUN apt-get update
-
 RUN apt-get install -y --no-install-recommends \
     wget ca-certificates python gfortran build-essential ghostscript vim libboost-all-dev
 
@@ -20,10 +19,14 @@ WORKDIR /home/software
 
 ENV MG_VERSION="MG5_aMC_v2_6_2" 
 
-RUN git clone https://github.com/irinaespejo/${MG_VERSION}.git &&\
-	./${MG_VERSION}/bin/mg5_aMC
+COPY ${MG_VERSION}/ ./${MG_VERSION}
+RUN ./${MG_VERSION}/bin/mg5_aMC
 
+#config path
 WORKDIR /home/software/${MG_VERSION}
+ENV ROOTSYS /usr/local 
+ENV PATH $PATH:$ROOTSYS/bin 
+ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:$ROOTSYS/lib
 
 RUN echo "install lhapdf6" | /home/software/${MG_VERSION}/bin/mg5_aMC
 RUN echo "install pythia8" | /home/software/${MG_VERSION}/bin/mg5_aMC
